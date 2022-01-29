@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerAnimation : MonoBehaviour
 {
     private InputActions _inputActions;
+    private Vector2 _prevDirection;
     public PlayerReferences PlayerReferences;
     public Animator Animator;
 
@@ -22,28 +23,35 @@ public class PlayerAnimation : MonoBehaviour
     
     private void OnMovement(InputAction.CallbackContext callbackContext)
     {
-        Vector2 direction = callbackContext.ReadValue<Vector2>();
-        if (!direction.Equals(Vector2.zero))
+        if (callbackContext.performed)
         {
-            if (direction.x > 0)
+            Vector2 direction = callbackContext.ReadValue<Vector2>();
+            if (!direction.Equals(Vector2.zero))
             {
-                transform.rotation = Quaternion.Euler(0,0,0);
-                Animator.SetTrigger("SideWalk");  
-            }else if (direction.x < 0)
-            {
-                transform.rotation = Quaternion.Euler(0,180,0);
-                Animator.SetTrigger("SideWalk");
-            }
-            
-            if (direction.y > 0)
-            {
-                Animator.SetTrigger("BackwardWalk");   
-            }else if (direction.y < 0)
-            {
-                Animator.SetTrigger("ForwardWalk");
+                if (direction.x > 0 && direction.x > _prevDirection.x)
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    Animator.SetTrigger("SideWalk");
+                }
+                else if (direction.x < 0 && direction.x < _prevDirection.x)
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                    Animator.SetTrigger("SideWalk");
+                }
+
+                if (direction.y > 0 && direction.y > _prevDirection.y)
+                {
+                    Animator.SetTrigger("BackwardWalk");
+                }
+                else if (direction.y < 0 && direction.y < _prevDirection.y)
+                {
+                    Animator.SetTrigger("ForwardWalk");
+                }
+                Animator.ResetTrigger("Idle");
+                _prevDirection = direction;
             }
         }
-        else
+        if(callbackContext.canceled)
         {
             Animator.SetTrigger("Idle");
         }
