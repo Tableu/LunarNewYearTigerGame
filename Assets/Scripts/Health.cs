@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    public int Health;
+    public int CurrentHealth;
     public int MaxHealth;
     public Rigidbody2D Rigidbody2D;
     public Slider HealthBar;
@@ -15,8 +14,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        HealthBar.maxValue = Health;
-        HealthBar.value = Health;
+        if (HealthBar != null)
+        {
+            HealthBar.maxValue = MaxHealth;
+            HealthBar.value = CurrentHealth;
+        }
     }
 
     void FixedUpdate()
@@ -37,20 +39,23 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        var damage = other.gameObject.GetComponent<Damage>();
+        var damage = other.transform.gameObject.GetComponent<Damage>();
         if (damage != null && !_inKnockback)
         {
             _dmg = damage;
-            Health -= _dmg.damage;
+            CurrentHealth -= _dmg.damage;
             _knockbackDirection = (transform.position - other.transform.position).normalized;
             _inKnockback = true;
             Rigidbody2D.AddForce(_dmg.knockbackStrength*_knockbackDirection, ForceMode2D.Impulse);
             GetComponent<PlayerMovement>().enabled = false;
             _knockbackStart = Time.time;
-            HealthBar.value = Health;
+            if (HealthBar != null)
+            {
+                HealthBar.value = CurrentHealth;
+            }
         }
 
-        if (Health <= 0)
+        if (CurrentHealth <= 0)
         {
             Destroy(gameObject);
         }
