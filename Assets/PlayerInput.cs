@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -10,7 +9,7 @@ public class PlayerInput : MonoBehaviour
     {
         _inputActions = new InputActions();
     }
-    
+
     void Update()
     {
         transform.Translate(_inputActions.Player.Movement.ReadValue<Vector2>()*speed);
