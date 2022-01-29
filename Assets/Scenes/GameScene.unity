@@ -394,6 +394,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 85, y: 45}
   m_EdgeRadius: 0
+--- !u!95 &1757837150 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1899178941626998528, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
+  m_PrefabInstance: {fileID: 8912522750686722395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3170738359480474729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -474,22 +479,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8912522750176719536, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
-      propertyPath: m_Size.x
-      value: 3.0257545
-      objectReference: {fileID: 0}
-    - target: {fileID: 8912522750176719536, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
-      propertyPath: m_Size.y
-      value: 4.6823926
-      objectReference: {fileID: 0}
-    - target: {fileID: 8912522750176719536, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.028543472
-      objectReference: {fileID: 0}
-    - target: {fileID: 8912522750176719536, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.39904612
-      objectReference: {fileID: 0}
     - target: {fileID: 8912522750176719539, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -542,14 +531,10 @@ PrefabInstance:
       propertyPath: CinemachineBrain
       value: 
       objectReference: {fileID: 519420030}
-    - target: {fileID: 8912522750176719548, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8632310061206427997, guid: 753a9c1e61b6f734a8bb1421a9da3aa8, type: 3}
     - target: {fileID: 8912522750176719549, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
+      propertyPath: Animator
+      value: 
+      objectReference: {fileID: 1757837150}
     - target: {fileID: 8912522750176719550, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
       propertyPath: m_Name
       value: Player
