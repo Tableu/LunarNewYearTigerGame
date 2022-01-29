@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: eec3a20c7e9190844a8333124fc8dba4
+guid: f2fb565d11f6f0344ad1d9553b369f9e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 336933565358805997
-    second: tigerSide_0
+      213: 1178311957926163366
+    second: tigerBackDrawback_0
   - first:
-      213: -5277306436574043060
-    second: tigerSide_1
+      213: 1996251653517843683
+    second: tigerBackDrawback_1
   - first:
-      213: 6074355224441923433
-    second: tigerSide_2
+      213: -3370630231699657456
+    second: tigerBackDrawback_2
+  - first:
+      213: 6449512960696502209
+    second: tigerBackDrawback_3
+  - first:
+      213: -994361595269309461
+    second: tigerBackDrawback_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,7 +118,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tigerSide_0
+      name: tigerBackDrawback_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de31e14ea470da400800000000000000
-      internalID: 336933565358805997
+      spriteID: 6a3b8c69b743a5010800000000000000
+      internalID: 1178311957926163366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tigerSide_1
+      name: tigerBackDrawback_1
       rect:
         serializedVersion: 2
         x: 64
@@ -147,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c442f1d91cd33c6b0800000000000000
-      internalID: -5277306436574043060
+      spriteID: 3ec97326d4c14bb10800000000000000
+      internalID: 1996251653517843683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tigerSide_2
+      name: tigerBackDrawback_2
       rect:
         serializedVersion: 2
         x: 128
@@ -168,8 +174,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9672660b4e17c4450800000000000000
-      internalID: 6074355224441923433
+      spriteID: 01d6952a9ad1931d0800000000000000
+      internalID: -3370630231699657456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tigerBackDrawback_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7c794edd5418950800000000000000
+      internalID: 6449512960696502209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tigerBackDrawback_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb9eafb5615332f0800000000000000
+      internalID: -994361595269309461
       vertices: []
       indices: 
       edges: []

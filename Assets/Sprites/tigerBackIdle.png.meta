@@ -118,10 +118,10 @@ TextureImporter:
       name: tigerBackIdle_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 12
-        width: 29
-        height: 45
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,10 +139,10 @@ TextureImporter:
       name: tigerBackIdle_1
       rect:
         serializedVersion: 2
-        x: 82
-        y: 11
-        width: 29
-        height: 45
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: tigerBackIdle_2
       rect:
         serializedVersion: 2
-        x: 146
-        y: 10
-        width: 29
-        height: 45
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: tigerBackIdle_3
       rect:
         serializedVersion: 2
-        x: 210
-        y: 11
-        width: 29
-        height: 45
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

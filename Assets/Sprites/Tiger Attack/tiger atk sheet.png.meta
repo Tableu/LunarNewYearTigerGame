@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: eec3a20c7e9190844a8333124fc8dba4
+guid: 56d28cfb81d1f164cb3068e942a5dd09
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 336933565358805997
-    second: tigerSide_0
+      213: -1798986672588247483
+    second: tiger atk sheet_0
   - first:
-      213: -5277306436574043060
-    second: tigerSide_1
+      213: 8327912681149444174
+    second: tiger atk sheet_1
   - first:
-      213: 6074355224441923433
-    second: tigerSide_2
+      213: -2227093261894059760
+    second: tiger atk sheet_2
+  - first:
+      213: 8198772908703689032
+    second: tiger atk sheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,64 +115,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tigerSide_0
+      name: tiger atk sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 73
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6232877}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de31e14ea470da400800000000000000
-      internalID: 336933565358805997
+      spriteID: 54e27b81727b807e0800000000000000
+      internalID: -1798986672588247483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tigerSide_1
+      name: tiger atk sheet_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 73
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6232877}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c442f1d91cd33c6b0800000000000000
-      internalID: -5277306436574043060
+      spriteID: e403268d570b29370800000000000000
+      internalID: 8327912681149444174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tigerSide_2
+      name: tiger atk sheet_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 73
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6232877}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9672660b4e17c4450800000000000000
-      internalID: 6074355224441923433
+      spriteID: 019732b5a76c711e0800000000000000
+      internalID: -2227093261894059760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger atk sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 73
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6232877}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84921618584e7c170800000000000000
+      internalID: 8198772908703689032
       vertices: []
       indices: 
       edges: []
