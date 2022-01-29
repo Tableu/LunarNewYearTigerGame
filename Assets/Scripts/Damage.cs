@@ -5,7 +5,8 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     public int damage;
-    public List<float> knockbackStrength;
+    public float knockbackStrength;
+    public float knockbackDuration;
     // Start is called before the first frame update
     void Start()
     {

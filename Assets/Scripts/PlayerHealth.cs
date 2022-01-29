@@ -1,52 +1,56 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health;
+    public int Health;
+    public int MaxHealth;
+    public Rigidbody2D Rigidbody2D;
+    public Slider HealthBar;
     private bool _inKnockback;
-    private int _knockbackFrameIndex;
     private Vector2 _knockbackDirection;
-    private List<float> _knockback;
+    private float _knockbackStart;
     private Damage _dmg;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        
+        HealthBar.maxValue = Health;
+        HealthBar.value = Health;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (_inKnockback)
         {
-            _knockbackFrameIndex++;
-            if (_knockbackFrameIndex < _knockback.Count)
+            if (Time.time - _knockbackStart < _dmg.knockbackDuration)
             {
-                transform.Translate(_knockback[_knockbackFrameIndex]*_knockbackDirection);
+                Rigidbody2D.AddForce(_dmg.knockbackStrength*_knockbackDirection, ForceMode2D.Impulse);
             }
             else
             {
                 _inKnockback = false;
+                GetComponent<PlayerMovement>().enabled = true;
             }
-
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        _dmg = other.gameObject.GetComponent<Damage>();
-        if (_dmg != null && !_inKnockback)
+        var damage = other.gameObject.GetComponent<Damage>();
+        if (damage != null && !_inKnockback)
         {
-            health -= _dmg.damage;
+            _dmg = damage;
+            Health -= _dmg.damage;
             _knockbackDirection = (transform.position - other.transform.position).normalized;
             _inKnockback = true;
-            _knockback = _dmg.knockbackStrength;
-            transform.Translate(_knockback[0] * _knockbackDirection);
-            _knockbackFrameIndex = 1;
+            Rigidbody2D.AddForce(_dmg.knockbackStrength*_knockbackDirection, ForceMode2D.Impulse);
+            GetComponent<PlayerMovement>().enabled = false;
+            _knockbackStart = Time.time;
+            HealthBar.value = Health;
         }
 
-        if (health <= 0)
+        if (Health <= 0)
         {
             Destroy(gameObject);
         }

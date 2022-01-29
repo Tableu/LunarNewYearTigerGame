@@ -1,37 +1,40 @@
 fileFormatVersion: 2
-guid: ec5749ce82fe9db4eb3d838b85ab7113
+guid: 707b9cd4532268847bd926f6095306fb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6698652916547493314
-    second: bambooWallCeiling_0
+      213: -5547869146068571263
+    second: LionDragon_0
   - first:
-      213: 6700992709664741690
-    second: bambooWallCeiling_1
+      213: -5705610442417388596
+    second: LionDragon_1
   - first:
-      213: 5823411767828533678
-    second: bambooWallCeiling_2
+      213: -6259314595654541708
+    second: LionDragon_2
   - first:
-      213: 2587586416629875701
-    second: bambooWallCeiling_3
+      213: -7820136484284424182
+    second: LionDragon_3
   - first:
-      213: -3055620490653831473
-    second: bambooWallCeiling_4
+      213: 5178448599979367409
+    second: LionDragon_4
   - first:
-      213: 304095106095814433
-    second: bambooWallCeiling_5
+      213: -183174423098489966
+    second: LionDragon_5
   - first:
-      213: 2374114907423332380
-    second: bambooWallCeiling_6
+      213: -6153309024267656863
+    second: LionDragon_6
   - first:
-      213: -8185298348702970283
-    second: bambooWallCeiling_7
+      213: 6622889584540692361
+    second: LionDragon_7
   - first:
-      213: 4693527826741557922
-    second: bambooWallCeiling_8
+      213: 6883624935300511430
+    second: LionDragon_8
   - first:
-      213: 5765039583539935980
-    second: bambooWallCeiling_9
+      213: -5601057990881242957
+    second: LionDragon_9
+  - first:
+      213: 6641584120677363720
+    second: LionDragon_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -133,49 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bambooWallCeiling_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2cd927c265566fc50800000000000000
-      internalID: 6698652916547493314
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bambooWallCeiling_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a399c06bd55befc50800000000000000
-      internalID: 6700992709664741690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bambooWallCeiling_2
+      name: LionDragon_0
       rect:
         serializedVersion: 2
         x: 0
@@ -189,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea1df3a262ae0d050800000000000000
-      internalID: 5823411767828533678
+      spriteID: 18bab30d7620203b0800000000000000
+      internalID: -5547869146068571263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bambooWallCeiling_3
+      name: LionDragon_1
       rect:
         serializedVersion: 2
         x: 32
@@ -210,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f389d4e224f8e320800000000000000
-      internalID: 2587586416629875701
+      spriteID: cc3c3f0488991d0b0800000000000000
+      internalID: -5705610442417388596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bambooWallCeiling_4
+      name: LionDragon_2
       rect:
         serializedVersion: 2
         x: 0
@@ -231,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fce6c266a514895d0800000000000000
-      internalID: -3055620490653831473
+      spriteID: 47ed79cd9827229a0800000000000000
+      internalID: -6259314595654541708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bambooWallCeiling_5
+      name: LionDragon_3
       rect:
         serializedVersion: 2
         x: 32
@@ -252,14 +213,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12796c843ec583400800000000000000
-      internalID: 304095106095814433
+      spriteID: a00a727ec4b497390800000000000000
+      internalID: -7820136484284424182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bambooWallCeiling_6
+      name: LionDragon_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb9369a09b8dd740800000000000000
+      internalID: 5178448599979367409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LionDragon_5
       rect:
         serializedVersion: 2
         x: 0
@@ -273,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c185de00eec82f020800000000000000
-      internalID: 2374114907423332380
+      spriteID: 293074b25db357df0800000000000000
+      internalID: -183174423098489966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bambooWallCeiling_7
+      name: LionDragon_6
       rect:
         serializedVersion: 2
         x: 32
@@ -294,14 +276,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55ec7f8f48af76e80800000000000000
-      internalID: -8185298348702970283
+      spriteID: 16122574b0e0b9aa0800000000000000
+      internalID: -6153309024267656863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bambooWallCeiling_8
+      name: LionDragon_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fae21dcfa39eb50800000000000000
+      internalID: 6622889584540692361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LionDragon_8
       rect:
         serializedVersion: 2
         x: 0
@@ -315,14 +318,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2aa7758e0b2c22140800000000000000
-      internalID: 4693527826741557922
+      spriteID: 6c6bb9b586c878f50800000000000000
+      internalID: 6883624935300511430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bambooWallCeiling_9
+      name: LionDragon_9
       rect:
         serializedVersion: 2
         x: 32
@@ -336,8 +339,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ceab6fce4f8810050800000000000000
-      internalID: 5765039583539935980
+      spriteID: 3b01927de6b0542b0800000000000000
+      internalID: -5601057990881242957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LionDragon_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80079d2b195ab2c50800000000000000
+      internalID: 6641584120677363720
       vertices: []
       indices: 
       edges: []

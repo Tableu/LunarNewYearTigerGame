@@ -223,7 +223,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -245,9 +245,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerReferences: {fileID: 11400000, guid: ed64393db5eb6a94585d2729aa493ed9, type: 2}
-  Speed: 0.4
-  DashSpeed: 1
-  DashDuration: 0.3
+  Rigidbody2D: {fileID: 8912522750176719537}
+  Speed: 18
+  MaxSpeed: 18
+  DashSpeed: 10
+  DashDuration: 0.2
+  DashCooldown: 2
 --- !u!114 &8912522750176719543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,4 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb110ce40a58db54cae175be83a66934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  Health: 10
+  MaxHealth: 10
+  Rigidbody2D: {fileID: 8912522750176719537}
+  HealthBar: {fileID: 0}

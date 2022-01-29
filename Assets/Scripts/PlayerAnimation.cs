@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -56,5 +57,11 @@ public class PlayerAnimation : MonoBehaviour
             Animator.SetTrigger("Idle");
             _prevDirection = Vector2.zero;
         }
+    }
+
+    private void OnDestroy()
+    {
+        _inputActions.Player.Movement.performed -= OnMovement;
+        _inputActions.Player.Movement.canceled -= OnMovement;   
     }
 }
