@@ -34,11 +34,26 @@ public class PlayerInput : MonoBehaviour
         Vector2 direction = callbackContext.ReadValue<Vector2>();
         if (!direction.Equals(Vector2.zero))
         {
-            Animator.SetBool("Walk", true);
+            if (direction.x > 0)
+            {
+                
+            }else if (direction.x < 0)
+            {
+                
+            }
+            
+            if (direction.y > 0)
+            {
+                Animator.SetTrigger("BackwardWalk");   
+            }else if (direction.y < 0)
+            {
+                Animator.SetTrigger("ForwardWalk");
+            }
+            Animator.SetBool("Idle", false);
         }
         else
         {
-            Animator.SetBool("Walk", false);
+            Animator.SetBool("Idle", true);
         }
     }
 }

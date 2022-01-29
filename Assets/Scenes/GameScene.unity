@@ -359,7 +359,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772357, y: 1}
+    m_SensorSize: {x: 1.7779528, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -542,6 +542,10 @@ PrefabInstance:
       propertyPath: CinemachineBrain
       value: 
       objectReference: {fileID: 519420030}
+    - target: {fileID: 8912522750176719548, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8632310061206427997, guid: 753a9c1e61b6f734a8bb1421a9da3aa8, type: 3}
     - target: {fileID: 8912522750176719549, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
       propertyPath: speed
       value: 0.5
