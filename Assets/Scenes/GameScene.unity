@@ -9175,6 +9175,10 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 1232183841}
+    - target: {fileID: 5016113873418372678, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
+      propertyPath: attackFrameCount
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8446638021209979577, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
       propertyPath: m_Sprite
       value: 

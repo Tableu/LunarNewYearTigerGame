@@ -5,6 +5,9 @@ public class PlayerAnimation : MonoBehaviour
 {
     private InputActions _inputActions;
     private Vector2 _prevDirection;
+    private bool _attacking;
+    private int _attackFrame;
+    public int attackFrameCount;
     public PlayerReferences PlayerReferences;
     public Animator Animator;
 
@@ -18,11 +21,32 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            _attacking = true;
+            _attackFrame = 0;
+            Animator.SetTrigger("ForwardAttack");
+        }
+
+        if (_attacking)
+        {
+            if (_attackFrame >= attackFrameCount)
+            {
+                _attacking = false;
+            }
+            else
+            {
+                _attackFrame++;
+            }
+        }
     }
     
     private void OnMovement(InputAction.CallbackContext callbackContext)
     {
+        if (_attacking)
+        {
+            return;
+        }
         if (callbackContext.performed)
         {
             Vector2 direction = callbackContext.ReadValue<Vector2>();
