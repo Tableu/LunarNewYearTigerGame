@@ -54,6 +54,7 @@ public class PlayerAnimation : MonoBehaviour
         if(callbackContext.canceled)
         {
             Animator.SetTrigger("Idle");
+            _prevDirection = Vector2.zero;
         }
     }
 }
