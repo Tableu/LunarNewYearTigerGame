@@ -42,11 +42,10 @@ public class PlayerAnimation : MonoBehaviour
             {
                 Animator.SetTrigger("ForwardWalk");
             }
-            Animator.SetBool("Idle", false);
         }
         else
         {
-            Animator.SetBool("Idle", true);
+            Animator.SetTrigger("Idle");
         }
     }
 }
