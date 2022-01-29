@@ -72,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 852441827
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 336933565358805997, guid: eec3a20c7e9190844a8333124fc8dba4, type: 3}
+  m_Sprite: {fileID: -2822368232499994685, guid: 6552fd5132966f5449d9390d435def64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 8912522750176719537}
   - component: {fileID: 8912522750176719549}
   - component: {fileID: 8912522750176719543}
+  - component: {fileID: 530189286}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -197,7 +198,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.028543472, y: -0.39904612}
+  m_Offset: {x: -0.008076668, y: -0.26817933}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -208,7 +209,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0257545, y: 4.6823926}
+  m_Size: {x: 2.8792734, y: 2.2234466}
   m_EdgeRadius: 0
 --- !u!50 &8912522750176719537
 Rigidbody2D:
@@ -218,19 +219,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8912522750176719550}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: ab9e21eceb422e147bd24c38b48f3c54, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &8912522750176719549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +245,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerReferences: {fileID: 11400000, guid: ed64393db5eb6a94585d2729aa493ed9, type: 2}
-  speed: 0.5
+  Speed: 0.4
+  DashSpeed: 1
+  DashDuration: 0.3
 --- !u!114 &8912522750176719543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,5 +260,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333193d8882649149877481e5e336a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CinemachineBrain: {fileID: 0}
-  StartingCamera: {fileID: 0}
+--- !u!114 &530189286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912522750176719550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb110ce40a58db54cae175be83a66934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
