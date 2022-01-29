@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3730936131214571097}
   - component: {fileID: 1396679211}
   - component: {fileID: 5053728966469259602}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: AreaTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,8 +167,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 44, y: 24}
-      - {x: -44, y: 24}
+    - - {x: 44, y: 26}
+      - {x: -44, y: 26}
       - {x: -44, y: -24}
       - {x: 44, y: -24}
 --- !u!1001 &7969612668620221057
