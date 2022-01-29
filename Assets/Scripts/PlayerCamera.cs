@@ -4,23 +4,18 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     private CinemachineVirtualCamera _virtualCamera;
-    public CinemachineBrain CinemachineBrain;
-    public CinemachineVirtualCamera StartingCamera;
-    
-    private void Start()
-    {
-        _virtualCamera = StartingCamera;
-    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Collider2D col = _virtualCamera.gameObject.GetComponent<Collider2D>();
-        if (col != null)
-        {
-            col.enabled = true;
-        }
+        Collider2D col;
         if (_virtualCamera != null)
         {
             _virtualCamera.enabled = false;
+            col = _virtualCamera.gameObject.GetComponent<Collider2D>();
+            if (col != null)
+            {
+                col.enabled = true;
+            }
         }
 
         _virtualCamera = other.gameObject.GetComponent<CinemachineVirtualCamera>();
