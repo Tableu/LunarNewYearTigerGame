@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: eec3a20c7e9190844a8333124fc8dba4
+guid: b07b8875e00ed38469a80db4fff5523b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 336933565358805997
-    second: tigerSide_0
+      213: 8139373591151238813
+    second: tigerForwardIdle_0
   - first:
-      213: -5277306436574043060
-    second: tigerSide_1
+      213: -6299183703870179624
+    second: tigerForwardIdle_1
   - first:
-      213: 6074355224441923433
-    second: tigerSide_2
+      213: 2762397723702876668
+    second: tigerForwardIdle_2
+  - first:
+      213: -7420879113631478548
+    second: tigerForwardIdle_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,64 +115,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tigerSide_0
+      name: tigerForwardIdle_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 14
-        width: 54
-        height: 38
+        x: 18
+        y: 2
+        width: 29
+        height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de31e14ea470da400800000000000000
-      internalID: 336933565358805997
+      spriteID: d9ed3ca282dd4f070800000000000000
+      internalID: 8139373591151238813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tigerSide_1
+      name: tigerForwardIdle_1
       rect:
         serializedVersion: 2
-        x: 68
-        y: 14
-        width: 54
-        height: 38
+        x: 82
+        y: 2
+        width: 29
+        height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c442f1d91cd33c6b0800000000000000
-      internalID: -5277306436574043060
+      spriteID: 8d673ebbbcdc498a0800000000000000
+      internalID: -6299183703870179624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tigerSide_2
+      name: tigerForwardIdle_2
       rect:
         serializedVersion: 2
-        x: 129
-        y: 14
-        width: 54
-        height: 38
+        x: 146
+        y: 2
+        width: 29
+        height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9672660b4e17c4450800000000000000
-      internalID: 6074355224441923433
+      spriteID: cf958a90812065620800000000000000
+      internalID: 2762397723702876668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tigerForwardIdle_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 2
+        width: 29
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec41ee73cdb30990800000000000000
+      internalID: -7420879113631478548
       vertices: []
       indices: 
       edges: []
