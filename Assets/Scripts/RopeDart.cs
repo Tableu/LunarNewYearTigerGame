@@ -21,7 +21,7 @@ public class RopeDart : MonoBehaviour
     {
         if (Throw)
         {
-            _size = 0;
+            _size = 4;
             _target = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             _throwing = true;
             Throw = false;
