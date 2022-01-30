@@ -198,6 +198,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108603901}
   m_CullTransparentMesh: 1
+--- !u!1 &122793518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3712131217932077201, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
+  m_PrefabInstance: {fileID: 8912522750686722395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &122793523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122793518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eee5e2f926d7fe449b6132a4b7d87f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  knockbackStrength: 10
+  knockbackDuration: 10
 --- !u!1 &235251082
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +270,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 659dc15c1e37e9442b105c2de71afe1a, type: 2}
+  - {fileID: 2100000, guid: ba1cc483026945b41a054f54775a6fb0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9892,7 +9912,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: ab9e21eceb422e147bd24c38b48f3c54, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &386896172
 MonoBehaviour:
@@ -17695,6 +17715,22 @@ PrefabInstance:
     - target: {fileID: 1412987748925622612, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712131217932077201, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712131217932077212, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712131217932077212, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712131217932077214, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
+      propertyPath: Speed
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4248289707722690021, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
       propertyPath: m_IsTrigger
