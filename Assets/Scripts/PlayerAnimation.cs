@@ -16,6 +16,7 @@ public class PlayerAnimation : MonoBehaviour
         _inputActions.Player.Movement.performed += OnMovement;
         _inputActions.Player.Movement.canceled += OnMovement;
         _inputActions.Player.Transform.started += OnTransform;
+        _inputActions.Player.Dash.started += OnDash;
     }
 
     // Update is called once per frame
@@ -40,6 +41,15 @@ public class PlayerAnimation : MonoBehaviour
     {
         Animator.SetTrigger("Transform");
         Animator.SetBool("Transformed", !Animator.GetBool("Transformed"));
+    }
+
+    private void OnDash(InputAction.CallbackContext callbackContext)
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 direction = (mousePos-(Vector2)transform.position).normalized;
+        SetDirection(direction, Vector2.zero);
+        Animator.ResetTrigger("Idle");
+        Animator.SetTrigger("Idle");
     }
     
     private void OnMovement(InputAction.CallbackContext callbackContext)
@@ -75,11 +85,11 @@ public class PlayerAnimation : MonoBehaviour
             Animator.SetBool("Right", false);
             Animator.SetBool("Backward", false);
             Animator.SetBool("Forward", false);
-            var pos = SideHitbox.localPosition;
-            if (Mathf.Sign(pos.x) > 0)
-            {
-                SideHitbox.localPosition = new Vector3(pos.x * -1, pos.y, pos.z);
-            }
+            //var pos = SideHitbox.localPosition;
+            //if (Mathf.Sign(pos.x) > 0)
+            //{
+            //    SideHitbox.localPosition = new Vector3(pos.x * -1, pos.y, pos.z);
+            //}
 
             if (movementDirection.x > 0)
             {
@@ -132,5 +142,6 @@ public class PlayerAnimation : MonoBehaviour
         _inputActions.Player.Movement.performed -= OnMovement;
         _inputActions.Player.Movement.canceled -= OnMovement;   
         _inputActions.Player.Transform.performed -= OnTransform;
+        _inputActions.Player.Dash.started -= OnDash;
     }
 }
