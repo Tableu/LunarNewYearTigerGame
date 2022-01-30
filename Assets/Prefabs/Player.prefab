@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4256212732580766060}
   - component: {fileID: 4695483116525665820}
   - component: {fileID: 316265027}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: BackHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,6 +73,21 @@ MonoBehaviour:
   damage: 10
   knockbackStrength: 5
   knockbackDuration: 5
+--- !u!114 &122793523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3712131217932077201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eee5e2f926d7fe449b6132a4b7d87f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  knockbackStrength: 10
+  knockbackDuration: 10
 --- !u!1 &6259006060959546344
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +99,7 @@ GameObject:
   - component: {fileID: 8995402619915360074}
   - component: {fileID: 6801434182680912261}
   - component: {fileID: 1210242834}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: SideHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +172,7 @@ GameObject:
   - component: {fileID: 67372662792595909}
   - component: {fileID: 4248289707722690021}
   - component: {fileID: 1060013711}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: FrontHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,6 +246,12 @@ GameObject:
   - component: {fileID: 8446638021209979577}
   - component: {fileID: 1899178941626998528}
   - component: {fileID: 5016113873418372678}
+  - component: {fileID: 611456916}
+  - component: {fileID: 611456917}
+  - component: {fileID: 611456919}
+  - component: {fileID: 611456920}
+  - component: {fileID: 611456923}
+  - component: {fileID: 611456924}
   m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
@@ -297,7 +318,7 @@ SpriteRenderer:
   m_SortingLayerID: 852441827
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8632310061206427997, guid: 753a9c1e61b6f734a8bb1421a9da3aa8, type: 3}
+  m_Sprite: {fileID: -4876036074680418886, guid: bc1918d235ac8c241b36d898f02be050, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -345,6 +366,84 @@ MonoBehaviour:
   Renderer: {fileID: 8446638021209979577}
   Animator: {fileID: 1899178941626998528}
   SideHitbox: {fileID: 8995402619915360074}
+--- !u!114 &611456916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255441854734364866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76f2bcfb18a32b4085cb4126681fa56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Tiger/TigerFootsteps
+--- !u!114 &611456917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255441854734364866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d1d5b45c4f8d741a3dcee1c4ddf5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Tiger/TigerAttackCharge
+--- !u!114 &611456919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255441854734364866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c6118e9a36f8c45b53e150de76110f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Tiger/Tiger Slash
+--- !u!114 &611456920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255441854734364866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aae7a0aa3a25594db264ae70591007f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Human/HumanFootsteps
+--- !u!114 &611456923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255441854734364866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf34d644a774764fb32217475ea6bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Human/Human Attack
+--- !u!114 &611456924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255441854734364866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4375b8cbb81597c40bad9495e35d7717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Human/HumanChargeup
 --- !u!1 &8912522750176719550
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +459,7 @@ GameObject:
   - component: {fileID: 8912522750176719549}
   - component: {fileID: 8912522750176719543}
   - component: {fileID: 530189286}
+  - component: {fileID: 2044980038}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -475,10 +575,10 @@ MonoBehaviour:
   Speed: 18
   MaxSpeed: 18
   PlayerReferences: {fileID: 11400000, guid: ed64393db5eb6a94585d2729aa493ed9, type: 2}
-  ChargeSpeed: 0
+  ChargeSpeed: 5
   ChargeStart: 0
   DashSpeed: 10
-  DashDuration: 0.2
+  DashDuration: 0.15
   DashCooldown: 2
 --- !u!114 &8912522750176719543
 MonoBehaviour:
@@ -509,6 +609,21 @@ MonoBehaviour:
   Rigidbody2D: {fileID: 8912522750176719537}
   Movement: {fileID: 8912522750176719549}
   HealthBar: {fileID: 0}
+--- !u!114 &2044980038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912522750176719550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0d85aec9a37f5429550dea3b201d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/General/Take Damage
+  script: {fileID: 530189286}
+  OldHealth: 0
 --- !u!1001 &1606095114826664803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -520,9 +635,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: rope dart
       objectReference: {fileID: 0}
+    - target: {fileID: 2724076700710274034, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2724076700710274045, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
       propertyPath: Speed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724076700710274045, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
+      propertyPath: LeftPos.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724076700710274045, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
+      propertyPath: RightPos.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724076700710274045, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
+      propertyPath: ForwardPos.x
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724076700710274045, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
+      propertyPath: ForwardPos.y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724076700710274045, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
+      propertyPath: BackwardPos.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724076700710274045, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
+      propertyPath: BackwardPos.y
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2724076700710274047, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
       propertyPath: m_RootOrder
@@ -530,11 +673,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2724076700710274047, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.91
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2724076700710274047, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2724076700710274047, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
       propertyPath: m_LocalPosition.z
@@ -570,6 +713,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
+--- !u!1 &3712131217932077201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2724076700710274034, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
+  m_PrefabInstance: {fileID: 1606095114826664803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3712131217932077212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2724076700710274047, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}

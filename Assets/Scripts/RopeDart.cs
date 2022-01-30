@@ -12,6 +12,10 @@ public class RopeDart : MonoBehaviour
     public float Speed;
     public float MaxSize;
     public SpriteRenderer SpriteRenderer;
+    public Vector2 LeftPos;
+    public Vector2 RightPos;
+    public Vector2 ForwardPos;
+    public Vector2 BackwardPos;
     void Start()
     {
         _size = 0;
@@ -61,5 +65,29 @@ public class RopeDart : MonoBehaviour
             }
             transform.rotation = Quaternion.Euler(0,0,_angle);
         }
+    }
+
+    public void Left()
+    {
+        if(!_returning && !_throwing)
+            transform.localPosition = LeftPos;
+    }
+
+    public void Right()
+    {
+        if(!_returning && !_throwing)
+            transform.localPosition = RightPos;
+    }
+
+    public void Forward()
+    {
+        if(!_returning && !_throwing)
+            transform.localPosition = ForwardPos;
+    }
+
+    public void Backward()
+    {
+        if(!_returning && !_throwing)
+            transform.localPosition = BackwardPos;
     }
 }

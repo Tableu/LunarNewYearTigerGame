@@ -13,6 +13,7 @@ public class PlayerAnimation : MonoBehaviour
     public SpriteRenderer Renderer;
     public Animator Animator;
     public Transform SideHitbox;
+    public RopeDart RopeDart;
     void Start()
     {
         _inputActions = PlayerReferences.InputActions;
@@ -85,6 +86,7 @@ public class PlayerAnimation : MonoBehaviour
         }
         if (angle <= 180 && angle > 135)
         {
+            RopeDart.Left();
             if(!_transformed || !Attacking)
                 transform.rotation = Quaternion.Euler(0,180,0);
             if (_currentDirection == Vector2.left)
@@ -109,6 +111,7 @@ public class PlayerAnimation : MonoBehaviour
         }
         else if (angle <= 45 && angle > 0)
         {
+            RopeDart.Right();
             if(!_transformed || !Attacking)
                 transform.rotation = Quaternion.Euler(0,0,0);
             if (_currentDirection == Vector2.right)
@@ -132,6 +135,7 @@ public class PlayerAnimation : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0,0,0);
             if (mouseDirection.y > 0)
             {
+                RopeDart.Backward();
                 if (_currentDirection == Vector2.down)
                 {
                     return;
@@ -146,6 +150,7 @@ public class PlayerAnimation : MonoBehaviour
             }
             else
             {
+                RopeDart.Forward();
                 if (_currentDirection == Vector2.up)
                 {
                     return;

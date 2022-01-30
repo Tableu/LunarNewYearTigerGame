@@ -29,12 +29,9 @@ public class PlayerMovement : Movement
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            if (_transformed)
-            {
-                PlayerReferences.DamageMultiplier = 1;
-                _maxSpeed = ChargeSpeed;
-                ChargeStart = Time.time;
-            }
+            PlayerReferences.DamageMultiplier = 1;
+            _maxSpeed = ChargeSpeed;
+            ChargeStart = Time.time;
         }
 
         if (Mouse.current.leftButton.wasReleasedThisFrame)
