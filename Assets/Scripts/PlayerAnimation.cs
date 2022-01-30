@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerAnimation : MonoBehaviour
 {
     private InputActions _inputActions;
-    private Vector2 _prevDirection;
+    private Vector2 _currentDirection;
+    private Vector2 _movementDirection;
     private bool _transformed = true;
     public bool Attacking;
     public PlayerReferences PlayerReferences;
@@ -23,11 +24,12 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 direction = (mousePos-(Vector2)transform.position).normalized;
         if (Mouse.current.leftButton.wasPressedThisFrame && !Attacking)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            Vector2 direction = (mousePos-(Vector2)transform.position).normalized;
             SetDirection(direction, Vector2.zero);
+            Animator.SetBool("Attacking", true);
             Animator.ResetTrigger("Release");
             Animator.SetTrigger("Attack");
         }
@@ -36,6 +38,9 @@ public class PlayerAnimation : MonoBehaviour
         {
             Animator.SetTrigger("Release");
         }
+        
+        Animator.SetBool("Attacking", Attacking);
+        SetDirection(direction, _movementDirection);
     }
 
     private void OnTransform(InputAction.CallbackContext callbackContext)
@@ -59,22 +64,17 @@ public class PlayerAnimation : MonoBehaviour
     
     private void OnMovement(InputAction.CallbackContext callbackContext)
     {
+        _movementDirection = callbackContext.ReadValue<Vector2>();
         if (Attacking)
         {
             return;
         }
         if (callbackContext.performed)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            Vector2 direction = (mousePos-(Vector2)transform.position).normalized;
-
-            SetDirection(direction, callbackContext.ReadValue<Vector2>());
-            Animator.SetTrigger("Walk");
             Animator.ResetTrigger("Idle");
         }
         if(callbackContext.canceled)
         {
-            Animator.ResetTrigger("Walk");
             Animator.ResetTrigger("Idle");
             Animator.SetTrigger("Idle");
         }
@@ -82,11 +82,28 @@ public class PlayerAnimation : MonoBehaviour
 
     private void SetDirection(Vector2 mouseDirection, Vector2 movementDirection)
     {
+        if (Attacking)
+        {
+            return;
+        }
         float angle = Vector2.Angle(new Vector2(1,0), mouseDirection);
         Animator.SetBool("Reverse", false);
-        
+
+        if (_movementDirection != Vector2.zero)
+        {
+            Animator.SetBool("Walk", true);
+            Animator.ResetTrigger("Idle");
+        }
+        else
+        {
+            Animator.SetBool("Walk", false);
+        }
         if (angle <= 180 && angle > 135)
         {
+            if (_currentDirection == Vector2.left)
+            {
+                return;
+            }
             Animator.SetBool("Left", true);
             Animator.SetBool("Right", false);
             Animator.SetBool("Backward", false);
@@ -101,11 +118,15 @@ public class PlayerAnimation : MonoBehaviour
             {
                 Animator.SetBool("Reverse", true);
             }
-
+            _currentDirection = Vector2.left;
             transform.rotation = Quaternion.Euler(0,180,0);
         }
         else if (angle <= 45 && angle > 0)
         {
+            if (_currentDirection == Vector2.right)
+            {
+                return;
+            }
             Animator.SetBool("Left", false);
             Animator.SetBool("Right", true);
             Animator.SetBool("Backward", false);
@@ -116,26 +137,37 @@ public class PlayerAnimation : MonoBehaviour
             {
                 Animator.SetBool("Reverse", true);
             }
+            _currentDirection = Vector2.right;
             transform.rotation = Quaternion.Euler(0,0,0);
         }else if (angle <= 135 && angle > 45)
         {
             if (mouseDirection.y > 0)
             {
+                if (_currentDirection == Vector2.down)
+                {
+                    return;
+                }
                 Animator.SetBool("Backward", true);
                 Animator.SetBool("Forward", false);
                 if (movementDirection.y < 0)
                 {
                     Animator.SetBool("Reverse", true);
                 }
+                _currentDirection = Vector2.down;
             }
             else
             {
+                if (_currentDirection == Vector2.up)
+                {
+                    return;
+                }
                 Animator.SetBool("Forward", true);
                 Animator.SetBool("Backward", false);
                 if (movementDirection.y > 0)
                 {
                     Animator.SetBool("Reverse", true);
                 }
+                _currentDirection = Vector2.up;
             }
             Animator.SetBool("Left", false);
             Animator.SetBool("Right", false);
