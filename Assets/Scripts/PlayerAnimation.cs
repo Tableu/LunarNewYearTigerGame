@@ -15,6 +15,7 @@ public class PlayerAnimation : MonoBehaviour
         _inputActions = PlayerReferences.InputActions;
         _inputActions.Player.Movement.performed += OnMovement;
         _inputActions.Player.Movement.canceled += OnMovement;
+        _inputActions.Player.Transform.started += OnTransform;
     }
 
     // Update is called once per frame
@@ -33,6 +34,12 @@ public class PlayerAnimation : MonoBehaviour
         {
             Animator.SetTrigger("Release");
         }
+    }
+
+    private void OnTransform(InputAction.CallbackContext callbackContext)
+    {
+        Animator.SetTrigger("Transform");
+        Animator.SetBool("IsTiger", !Animator.GetBool("IsTiger"));
     }
     
     private void OnMovement(InputAction.CallbackContext callbackContext)
@@ -121,5 +128,6 @@ public class PlayerAnimation : MonoBehaviour
     {
         _inputActions.Player.Movement.performed -= OnMovement;
         _inputActions.Player.Movement.canceled -= OnMovement;   
+        _inputActions.Player.Transform.performed -= OnTransform;
     }
 }
