@@ -8,6 +8,7 @@ public class PlayerAnimation : MonoBehaviour
     private Vector2 _movementDirection;
     private bool _transformed = true;
     public bool Attacking;
+    public bool Releasing;
     public PlayerReferences PlayerReferences;
     public SpriteRenderer Renderer;
     public Animator Animator;
@@ -29,17 +30,20 @@ public class PlayerAnimation : MonoBehaviour
         if (Mouse.current.leftButton.wasPressedThisFrame && !Attacking)
         {
             SetDirection(direction, Vector2.zero);
-            Animator.SetBool("Attacking", true);
+            Attacking = true;
+            Animator.SetBool("Attacking", Attacking);
             Animator.ResetTrigger("Release");
             Animator.SetTrigger("Attack");
         }
 
         if (Mouse.current.leftButton.wasReleasedThisFrame && Attacking)
         {
+            Attacking = false;
+            Animator.SetBool("Attacking", Attacking);
             Animator.SetTrigger("Release");
         }
+        Animator.SetBool("Releasing", Releasing);
         
-        Animator.SetBool("Attacking", Attacking);
         SetDirection(direction, _movementDirection);
     }
 
@@ -57,42 +61,22 @@ public class PlayerAnimation : MonoBehaviour
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             Vector2 direction = (mousePos - (Vector2) transform.position).normalized;
             SetDirection(direction, Vector2.zero);
-            Animator.ResetTrigger("Idle");
-            Animator.SetTrigger("Idle");
         }
     }
     
     private void OnMovement(InputAction.CallbackContext callbackContext)
     {
         _movementDirection = callbackContext.ReadValue<Vector2>();
-        if (Attacking)
-        {
-            return;
-        }
-        if (callbackContext.performed)
-        {
-            Animator.ResetTrigger("Idle");
-        }
-        if(callbackContext.canceled)
-        {
-            Animator.ResetTrigger("Idle");
-            Animator.SetTrigger("Idle");
-        }
     }
 
     private void SetDirection(Vector2 mouseDirection, Vector2 movementDirection)
     {
-        if (Attacking)
-        {
-            return;
-        }
         float angle = Vector2.Angle(new Vector2(1,0), mouseDirection);
         Animator.SetBool("Reverse", false);
 
         if (_movementDirection != Vector2.zero)
         {
             Animator.SetBool("Walk", true);
-            Animator.ResetTrigger("Idle");
         }
         else
         {
