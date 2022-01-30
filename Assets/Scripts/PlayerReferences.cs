@@ -7,14 +7,14 @@ public class PlayerReferences : ScriptableObject
 {
     public InputActions InputActions;
     public int DamageMultiplier;
-    private void OnEnable()
+    public void OnEnable()
     {
         InputActions = new InputActions();
         InputActions.Enable();
         DamageMultiplier = 1;
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         if (InputActions != null)
         {
