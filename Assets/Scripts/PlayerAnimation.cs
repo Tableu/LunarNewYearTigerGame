@@ -39,7 +39,7 @@ public class PlayerAnimation : MonoBehaviour
     private void OnTransform(InputAction.CallbackContext callbackContext)
     {
         Animator.SetTrigger("Transform");
-        Animator.SetBool("IsTiger", !Animator.GetBool("IsTiger"));
+        Animator.SetBool("Transformed", !Animator.GetBool("Transformed"));
     }
     
     private void OnMovement(InputAction.CallbackContext callbackContext)
@@ -71,7 +71,8 @@ public class PlayerAnimation : MonoBehaviour
         
         if (angle <= 180 && angle > 135)
         {
-            Animator.SetBool("Side", true);
+            Animator.SetBool("Left", true);
+            Animator.SetBool("Right", false);
             Animator.SetBool("Backward", false);
             Animator.SetBool("Forward", false);
             var pos = SideHitbox.localPosition;
@@ -85,11 +86,12 @@ public class PlayerAnimation : MonoBehaviour
                 Animator.SetBool("Reverse", true);
             }
 
-            Renderer.flipX = true;
+            transform.rotation = Quaternion.Euler(0,180,0);
         }
         else if (angle <= 45 && angle > 0)
         {
-            Animator.SetBool("Side", true);
+            Animator.SetBool("Left", false);
+            Animator.SetBool("Right", true);
             Animator.SetBool("Backward", false);
             Animator.SetBool("Forward", false);
             var pos = SideHitbox.localPosition;
@@ -98,7 +100,7 @@ public class PlayerAnimation : MonoBehaviour
             {
                 Animator.SetBool("Reverse", true);
             }
-            Renderer.flipX = false;
+            transform.rotation = Quaternion.Euler(0,0,0);
         }else if (angle <= 135 && angle > 45)
         {
             if (mouseDirection.y > 0)
@@ -119,8 +121,9 @@ public class PlayerAnimation : MonoBehaviour
                     Animator.SetBool("Reverse", true);
                 }
             }
-            Animator.SetBool("Side", false);
-            Renderer.flipX = false;
+            Animator.SetBool("Left", false);
+            Animator.SetBool("Right", false);
+            transform.rotation = Quaternion.Euler(0,0,0);
         }
     }
 
