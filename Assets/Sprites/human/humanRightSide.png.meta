@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: eec3a20c7e9190844a8333124fc8dba4
+guid: d54e5cb74b084994e956e44b611117af
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 336933565358805997
-    second: tigerSide_0
+      213: 6787416845607404858
+    second: humanRightSide_0
   - first:
-      213: -5277306436574043060
-    second: tigerSide_1
+      213: -226315134751636780
+    second: humanRightSide_1
   - first:
-      213: 6074355224441923433
-    second: tigerSide_2
+      213: -5434157070823095416
+    second: humanRightSide_2
   - first:
-      213: -2293098130088969388
-    second: tigerSide_3
+      213: -5871530674067507736
+    second: humanRightSide_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tigerSide_0
+      name: humanRightSide_0
       rect:
         serializedVersion: 2
         x: 0
@@ -129,14 +129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de31e14ea470da400800000000000000
-      internalID: 336933565358805997
+      spriteID: a358ee8e8afb13e50800000000000000
+      internalID: 6787416845607404858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tigerSide_1
+      name: humanRightSide_1
       rect:
         serializedVersion: 2
         x: 64
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c442f1d91cd33c6b0800000000000000
-      internalID: -5277306436574043060
+      spriteID: 4d285d18597fbdcf0800000000000000
+      internalID: -226315134751636780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tigerSide_2
+      name: humanRightSide_2
       rect:
         serializedVersion: 2
         x: 128
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9672660b4e17c4450800000000000000
-      internalID: 6074355224441923433
+      spriteID: 88389eb7feef594b0800000000000000
+      internalID: -5434157070823095416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tigerSide_3
+      name: humanRightSide_3
       rect:
         serializedVersion: 2
         x: 192
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45b3fe866674d20e0800000000000000
-      internalID: -2293098130088969388
+      spriteID: 8e5756ce5f1248ea0800000000000000
+      internalID: -5871530674067507736
       vertices: []
       indices: 
       edges: []

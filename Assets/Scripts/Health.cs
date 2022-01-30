@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
     public int CurrentHealth;
     public int MaxHealth;
     public Rigidbody2D Rigidbody2D;
+    public Movement Movement;
     public Slider HealthBar;
     private bool _inKnockback;
     private Vector2 _knockbackDirection;
@@ -32,29 +33,34 @@ public class Health : MonoBehaviour
             else
             {
                 _inKnockback = false;
-                GetComponent<PlayerMovement>().enabled = true;
+                if (Movement)
+                {
+                    Movement.enabled = true;
+                }
             }
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    public void ApplyDamage(Damage dmg)
     {
-        var damage = other.transform.gameObject.GetComponent<Damage>();
-        if (damage != null && !_inKnockback)
+        if (_inKnockback)
         {
-            _dmg = damage;
-            CurrentHealth -= _dmg.damage;
-            _knockbackDirection = (transform.position - other.transform.position).normalized;
-            _inKnockback = true;
-            Rigidbody2D.AddForce(_dmg.knockbackStrength*_knockbackDirection, ForceMode2D.Impulse);
-            GetComponent<PlayerMovement>().enabled = false;
-            _knockbackStart = Time.time;
-            if (HealthBar != null)
-            {
-                HealthBar.value = CurrentHealth;
-            }
+            return;
         }
-
+        _dmg = dmg;
+        CurrentHealth -= _dmg.damage;
+        _knockbackDirection = (transform.position - dmg.transform.position).normalized;
+        _inKnockback = true;
+        Rigidbody2D.AddForce(_dmg.knockbackStrength*_knockbackDirection, ForceMode2D.Impulse);
+        if (Movement != null)
+        {
+            Movement.enabled = false;
+        }
+        _knockbackStart = Time.time;
+        if (HealthBar != null)
+        {
+            HealthBar.value = CurrentHealth;
+        }
         if (CurrentHealth <= 0)
         {
             Destroy(gameObject);

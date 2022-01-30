@@ -6,9 +6,11 @@ using UnityEngine;
 public class PlayerReferences : ScriptableObject
 {
     public InputActions InputActions;
+    public int DamageMultiplier;
     private void OnEnable()
     {
         InputActions = new InputActions();
         InputActions.Enable();
+        DamageMultiplier = 1;
     }
 }

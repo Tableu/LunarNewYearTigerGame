@@ -2,25 +2,45 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Movement
 {
     private InputActions _inputActions;
     private bool _isDashing;
+    private bool _isCharging;
     private float _dashTimer;
     private Vector2 _playerDirection;
     public PlayerReferences PlayerReferences;
-    public Rigidbody2D Rigidbody2D;
-    public float Speed;
-    public float MaxSpeed;
+    public float ChargeSpeed;
+    public float ChargeStart;
     public float DashSpeed;
     public float DashDuration;
     public float DashCooldown;
 
     private void Start()
     {
+        _maxSpeed = MaxSpeed;
         _inputActions = PlayerReferences.InputActions;
         _inputActions.Player.Dash.started += Dash;
         _inputActions.Player.Movement.performed += SetPlayerDirection;
+    }
+
+    private void Update()
+    {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            PlayerReferences.DamageMultiplier = 1;
+            _maxSpeed = ChargeSpeed;
+            ChargeStart = Time.time;
+        }
+
+        if (Mouse.current.leftButton.wasReleasedThisFrame)
+        {
+            if (Time.time - ChargeStart > 1)
+            {
+                PlayerReferences.DamageMultiplier = 2;
+            }
+            _maxSpeed = MaxSpeed;
+        }
     }
 
     void FixedUpdate()
@@ -43,14 +63,14 @@ public class PlayerMovement : MonoBehaviour
             if (!dir.Equals(Vector2.zero))
             {
                 Rigidbody2D.AddForce(dir*Speed, ForceMode2D.Impulse);
-                if (Mathf.Abs(Rigidbody2D.velocity.x) > MaxSpeed)
+                if (Mathf.Abs(Rigidbody2D.velocity.x) > _maxSpeed)
                 {
-                    Rigidbody2D.velocity = new Vector2(MaxSpeed * dir.x, Rigidbody2D.velocity.y);
+                    Rigidbody2D.velocity = new Vector2(_maxSpeed * dir.x, Rigidbody2D.velocity.y);
                 }
 
-                if (Mathf.Abs(Rigidbody2D.velocity.y) > MaxSpeed)
+                if (Mathf.Abs(Rigidbody2D.velocity.y) > _maxSpeed)
                 {
-                    Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x,MaxSpeed * dir.y);
+                    Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x,_maxSpeed * dir.y);
                 }
 
                 if (dir.x == 0)

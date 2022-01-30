@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4256212732580766060}
   - component: {fileID: 4695483116525665820}
+  - component: {fileID: 316265027}
   m_Layer: 6
   m_Name: BackHitBox
   m_TagString: Untagged
@@ -57,6 +58,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &316265027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412987748925622612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eee5e2f926d7fe449b6132a4b7d87f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  knockbackStrength: 5
+  knockbackDuration: 5
 --- !u!1 &6259006060959546344
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,6 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8995402619915360074}
   - component: {fileID: 6801434182680912261}
+  - component: {fileID: 1210242834}
   m_Layer: 6
   m_Name: SideHitBox
   m_TagString: Untagged
@@ -114,6 +131,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &1210242834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259006060959546344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eee5e2f926d7fe449b6132a4b7d87f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  knockbackStrength: 5
+  knockbackDuration: 5
 --- !u!1 &7575711800376330480
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 67372662792595909}
   - component: {fileID: 4248289707722690021}
+  - component: {fileID: 1060013711}
   m_Layer: 6
   m_Name: FrontHitBox
   m_TagString: Untagged
@@ -171,6 +204,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1060013711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7575711800376330480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eee5e2f926d7fe449b6132a4b7d87f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  knockbackStrength: 5
+  knockbackDuration: 5
 --- !u!1 &8255441854734364866
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +296,7 @@ SpriteRenderer:
   m_SortingLayerID: 852441827
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6608225015936972539, guid: 6526d7e0db6e1a04c937f49bd9bec994, type: 3}
+  m_Sprite: {fileID: 8632310061206427997, guid: 753a9c1e61b6f734a8bb1421a9da3aa8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -421,10 +469,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78663392eee1eec4a8e5a7b194d9d87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerReferences: {fileID: 11400000, guid: ed64393db5eb6a94585d2729aa493ed9, type: 2}
   Rigidbody2D: {fileID: 8912522750176719537}
   Speed: 18
   MaxSpeed: 18
+  PlayerReferences: {fileID: 11400000, guid: ed64393db5eb6a94585d2729aa493ed9, type: 2}
   DashSpeed: 10
   DashDuration: 0.2
   DashCooldown: 2
@@ -452,7 +500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb110ce40a58db54cae175be83a66934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
+  CurrentHealth: 10
   MaxHealth: 10
   Rigidbody2D: {fileID: 8912522750176719537}
+  Movement: {fileID: 8912522750176719549}
   HealthBar: {fileID: 0}
