@@ -10139,6 +10139,45 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8255441854734364866, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
   m_PrefabInstance: {fileID: 8912522750686722395}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &611456915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611456914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aae7a0aa3a25594db264ae70591007f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Tiger/TigerAttackCharge
+--- !u!114 &611456916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611456914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76f2bcfb18a32b4085cb4126681fa56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Tiger/TigerFootsteps
+--- !u!114 &611456917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611456914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d1d5b45c4f8d741a3dcee1c4ddf5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Tiger/TigerAttackCharge
 --- !u!114 &611456919
 MonoBehaviour:
   m_ObjectHideFlags: 0
