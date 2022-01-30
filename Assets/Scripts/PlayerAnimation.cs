@@ -10,6 +10,7 @@ public class PlayerAnimation : MonoBehaviour
     public PlayerReferences PlayerReferences;
     public SpriteRenderer Renderer;
     public Animator Animator;
+    public Transform SideHitbox;
     void Start()
     {
         _inputActions = PlayerReferences.InputActions;
@@ -65,6 +66,8 @@ public class PlayerAnimation : MonoBehaviour
             Animator.SetBool("Side", true);
             Animator.SetBool("Backward", false);
             Animator.SetBool("Forward", false);
+            var pos = SideHitbox.localPosition;
+            SideHitbox.localPosition = new Vector3(pos.x * -1, pos.y, pos.z);
             Renderer.flipX = true;
         }
         else if (angle <= 45 && angle > 0)
@@ -72,6 +75,8 @@ public class PlayerAnimation : MonoBehaviour
             Animator.SetBool("Side", true);
             Animator.SetBool("Backward", false);
             Animator.SetBool("Forward", false);
+            var pos = SideHitbox.localPosition;
+            SideHitbox.localPosition = new Vector3(Mathf.Abs(pos.x), pos.y, pos.z);
             Renderer.flipX = false;
         }else if (angle <= 135 && angle > 45)
         {
