@@ -10191,6 +10191,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: event:/Human/HumanFootsteps
+--- !u!114 &611456923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611456914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf34d644a774764fb32217475ea6bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Human/Human Attack
+--- !u!114 &611456924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611456914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4375b8cbb81597c40bad9495e35d7717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Human/HumanChargeup
 --- !u!1 &808085064
 GameObject:
   m_ObjectHideFlags: 0
@@ -17701,6 +17727,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b39e50a5e73cef408e706ea0a88b2d7, type: 3}
+--- !u!1 &2044980031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8912522750176719550, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
+  m_PrefabInstance: {fileID: 8912522750686722395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2044980032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 530189286, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
+  m_PrefabInstance: {fileID: 8912522750686722395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044980031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb110ce40a58db54cae175be83a66934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2044980038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044980031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0d85aec9a37f5429550dea3b201d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/General/Take Damage
+  script: {fileID: 2044980032}
+  OldHealth: 0
 --- !u!1001 &4799000753513854696
 PrefabInstance:
   m_ObjectHideFlags: 0
