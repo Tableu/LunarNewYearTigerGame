@@ -17,9 +17,9 @@ public class RopeDart : MonoBehaviour
         _size = 0;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (Throw)
+        if (Throw && !_throwing && !_returning)
         {
             _size = 4;
             _target = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());

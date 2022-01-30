@@ -33,6 +33,7 @@ public class PlayerAnimation : MonoBehaviour
             Attacking = true;
             Animator.SetBool("Attacking", Attacking);
             Animator.ResetTrigger("Release");
+            Animator.ResetTrigger("Attack");
             Animator.SetTrigger("Attack");
         }
 
@@ -84,6 +85,8 @@ public class PlayerAnimation : MonoBehaviour
         }
         if (angle <= 180 && angle > 135)
         {
+            if(!_transformed || !Attacking)
+                transform.rotation = Quaternion.Euler(0,180,0);
             if (_currentDirection == Vector2.left)
             {
                 return;
@@ -103,10 +106,11 @@ public class PlayerAnimation : MonoBehaviour
                 Animator.SetBool("Reverse", true);
             }
             _currentDirection = Vector2.left;
-            transform.rotation = Quaternion.Euler(0,180,0);
         }
         else if (angle <= 45 && angle > 0)
         {
+            if(!_transformed || !Attacking)
+                transform.rotation = Quaternion.Euler(0,0,0);
             if (_currentDirection == Vector2.right)
             {
                 return;
@@ -122,9 +126,10 @@ public class PlayerAnimation : MonoBehaviour
                 Animator.SetBool("Reverse", true);
             }
             _currentDirection = Vector2.right;
-            transform.rotation = Quaternion.Euler(0,0,0);
         }else if (angle <= 135 && angle > 45)
         {
+            if(!_transformed || !Attacking)
+                transform.rotation = Quaternion.Euler(0,0,0);
             if (mouseDirection.y > 0)
             {
                 if (_currentDirection == Vector2.down)
@@ -155,7 +160,6 @@ public class PlayerAnimation : MonoBehaviour
             }
             Animator.SetBool("Left", false);
             Animator.SetBool("Right", false);
-            transform.rotation = Quaternion.Euler(0,0,0);
         }
     }
 

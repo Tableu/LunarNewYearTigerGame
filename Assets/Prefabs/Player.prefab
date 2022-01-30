@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attacking: 0
+  Releasing: 0
   PlayerReferences: {fileID: 11400000, guid: ed64393db5eb6a94585d2729aa493ed9, type: 2}
   Renderer: {fileID: 8446638021209979577}
   Animator: {fileID: 1899178941626998528}
@@ -518,6 +519,10 @@ PrefabInstance:
     - target: {fileID: 2724076700710274034, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
       propertyPath: m_Name
       value: rope dart
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724076700710274045, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
+      propertyPath: Speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2724076700710274047, guid: a8124e1b3f6206c4eb7d500466120a23, type: 3}
       propertyPath: m_RootOrder
