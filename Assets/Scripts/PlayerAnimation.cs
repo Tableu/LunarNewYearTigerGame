@@ -5,6 +5,7 @@ public class PlayerAnimation : MonoBehaviour
 {
     private InputActions _inputActions;
     private Vector2 _prevDirection;
+    private bool _transformed = true;
     public bool Attacking;
     public PlayerReferences PlayerReferences;
     public SpriteRenderer Renderer;
@@ -41,15 +42,19 @@ public class PlayerAnimation : MonoBehaviour
     {
         Animator.SetTrigger("Transform");
         Animator.SetBool("Transformed", !Animator.GetBool("Transformed"));
+        _transformed = !_transformed;
     }
 
     private void OnDash(InputAction.CallbackContext callbackContext)
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        Vector2 direction = (mousePos-(Vector2)transform.position).normalized;
-        SetDirection(direction, Vector2.zero);
-        Animator.ResetTrigger("Idle");
-        Animator.SetTrigger("Idle");
+        if (_transformed)
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Vector2 direction = (mousePos - (Vector2) transform.position).normalized;
+            SetDirection(direction, Vector2.zero);
+            Animator.ResetTrigger("Idle");
+            Animator.SetTrigger("Idle");
+        }
     }
     
     private void OnMovement(InputAction.CallbackContext callbackContext)
@@ -69,6 +74,7 @@ public class PlayerAnimation : MonoBehaviour
         }
         if(callbackContext.canceled)
         {
+            Animator.ResetTrigger("Walk");
             Animator.ResetTrigger("Idle");
             Animator.SetTrigger("Idle");
         }

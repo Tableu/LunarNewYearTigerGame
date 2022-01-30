@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +6,7 @@ public class PlayerMovement : Movement
     private InputActions _inputActions;
     private bool _isDashing;
     private bool _isCharging;
+    private bool _transformed = true;
     private float _dashTimer;
     private Vector2 _playerDirection;
     public PlayerReferences PlayerReferences;
@@ -22,15 +22,19 @@ public class PlayerMovement : Movement
         _inputActions = PlayerReferences.InputActions;
         _inputActions.Player.Dash.started += Dash;
         _inputActions.Player.Movement.performed += SetPlayerDirection;
+        _inputActions.Player.Transform.started += OnTransform;
     }
 
     private void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            PlayerReferences.DamageMultiplier = 1;
-            _maxSpeed = ChargeSpeed;
-            ChargeStart = Time.time;
+            if (_transformed)
+            {
+                PlayerReferences.DamageMultiplier = 1;
+                _maxSpeed = ChargeSpeed;
+                ChargeStart = Time.time;
+            }
         }
 
         if (Mouse.current.leftButton.wasReleasedThisFrame)
@@ -90,9 +94,15 @@ public class PlayerMovement : Movement
         }
     }
 
+    private void OnTransform(InputAction.CallbackContext context)
+    {
+        _transformed = !_transformed;
+        
+    }
+
     private void Dash(InputAction.CallbackContext context)
     {
-        if (Time.time - _dashTimer >= DashDuration)
+        if (_transformed && Time.time - _dashTimer >= DashDuration)
         {
             _isDashing = true;
             _dashTimer = Time.time;
