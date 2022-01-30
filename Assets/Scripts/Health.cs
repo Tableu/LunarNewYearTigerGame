@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,8 @@ public class Health : MonoBehaviour
     private Vector2 _knockbackDirection;
     private float _knockbackStart;
     private Damage _dmg;
+    public Animator Animator;
+    public Collider2D Collider2D;
 
     private void Start()
     {
@@ -63,7 +66,18 @@ public class Health : MonoBehaviour
         }
         if (CurrentHealth <= 0)
         {
-            Destroy(gameObject);
+            if (Animator != null)
+            {
+                Animator.SetBool("Death", true);
+                Collider2D.enabled = false;
+                StartCoroutine(DeathCoroutine());
+            }
         }
+    }
+
+    IEnumerator DeathCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
     }
 }

@@ -13,4 +13,13 @@ public class PlayerReferences : ScriptableObject
         InputActions.Enable();
         DamageMultiplier = 1;
     }
+
+    private void OnDisable()
+    {
+        if (InputActions != null)
+        {
+            InputActions.Disable();
+        }
+        DamageMultiplier = 1;
+    }
 }

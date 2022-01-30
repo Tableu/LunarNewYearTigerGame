@@ -94,6 +94,8 @@ MonoBehaviour:
   Rigidbody2D: {fileID: 955164325369385668}
   Movement: {fileID: 955164325369385665}
   HealthBar: {fileID: 0}
+  Animator: {fileID: 955164325526175212}
+  Collider2D: {fileID: 955164325369385672}
 --- !u!50 &955164325369385668
 Rigidbody2D:
   serializedVersion: 4
