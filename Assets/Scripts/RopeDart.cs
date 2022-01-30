@@ -8,6 +8,7 @@ public class RopeDart : MonoBehaviour
     private bool _returning;
     private Vector2 _target;
     private float _angle;
+    public bool Throw;
     public float Speed;
     public float MaxSize;
     public SpriteRenderer SpriteRenderer;
@@ -15,14 +16,17 @@ public class RopeDart : MonoBehaviour
     {
         _size = 0;
     }
-    
+
     void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame && !_throwing && !_returning)
+        if (Throw)
         {
-            _throwing = true;
+            _size = 0;
             _target = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            _throwing = true;
+            Throw = false;
         }
+        
         if (_size < MaxSize && _throwing)
         {
             SpriteRenderer.size = new Vector2(_size, SpriteRenderer.size.y);
@@ -43,6 +47,7 @@ public class RopeDart : MonoBehaviour
                 _throwing = false;
                 _returning = false;
                 SpriteRenderer.size = new Vector2(0, SpriteRenderer.size.y);
+                return;
             }
         }
 
