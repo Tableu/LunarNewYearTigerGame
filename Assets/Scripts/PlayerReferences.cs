@@ -5,21 +5,17 @@ using UnityEngine;
 [Serializable]
 public class PlayerReferences : ScriptableObject
 {
-    public InputActions InputActions;
+    public PlayerInputActions InputActions;
     public int DamageMultiplier;
     public void OnEnable()
     {
-        InputActions = new InputActions();
-        InputActions.Enable();
+        
         DamageMultiplier = 1;
     }
 
     public void OnDisable()
     {
-        if (InputActions != null)
-        {
-            InputActions.Disable();
-        }
+        
         DamageMultiplier = 1;
     }
 }

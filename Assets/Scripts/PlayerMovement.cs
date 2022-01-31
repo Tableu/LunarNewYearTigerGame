@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : Movement
 {
-    private InputActions _inputActions;
+    private PlayerInputActions _inputActions;
     private bool _isDashing;
     private bool _isCharging;
     private bool _transformed = true;
@@ -19,7 +20,8 @@ public class PlayerMovement : Movement
     private void Start()
     {
         _maxSpeed = MaxSpeed;
-        _inputActions = PlayerReferences.InputActions;
+        _inputActions = new PlayerInputActions();
+        _inputActions.Enable();
         _inputActions.Player.Dash.started += Dash;
         _inputActions.Player.Movement.performed += SetPlayerDirection;
         _inputActions.Player.Transform.started += OnTransform;

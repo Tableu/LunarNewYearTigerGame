@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    private InputActions _inputActions;
+    private PlayerInputActions _inputActions;
     private Vector2 _currentDirection;
     private Vector2 _movementDirection;
     private bool _transformed = true;
@@ -16,7 +16,8 @@ public class PlayerAnimation : MonoBehaviour
     public RopeDart RopeDart;
     void Start()
     {
-        _inputActions = PlayerReferences.InputActions;
+        _inputActions = new PlayerInputActions();
+        _inputActions.Enable();
         _inputActions.Player.Movement.performed += OnMovement;
         _inputActions.Player.Movement.canceled += OnMovement;
         _inputActions.Player.Transform.started += OnTransform;

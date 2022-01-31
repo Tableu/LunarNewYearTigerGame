@@ -1,5 +1,5 @@
 {
-    "name": "InputActions",
+    "name": "PlayerInputActions",
     "maps": [
         {
             "name": "Player",
@@ -11,7 +11,8 @@
                     "id": "41b48146-c8fa-4346-9aac-a5fb69b33fab",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Dash",
@@ -19,7 +20,8 @@
                     "id": "924d1795-b3df-499e-bfd1-8dbff7e066da",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Transform",
@@ -27,14 +29,15 @@
                     "id": "19a1befd-f026-46db-a9fc-84417ec3d8c1",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "2D Vector",
                     "id": "eb6b74d5-ba08-4d7c-ae59-8c27a3f25795",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=1)",
                     "interactions": "",
                     "processors": "Normalize(min=-1,max=1)",
                     "groups": "",
@@ -48,7 +51,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "New control scheme",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -59,7 +62,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "New control scheme",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -70,7 +73,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "New control scheme",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -81,7 +84,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "New control scheme",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -90,9 +93,9 @@
                     "name": "",
                     "id": "104362c5-df3f-4ed3-856b-87c263e36dab",
                     "path": "<Keyboard>/space",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
-                    "groups": "",
+                    "groups": "New control scheme",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -101,9 +104,9 @@
                     "name": "",
                     "id": "a862af10-5f4b-428a-b35c-96b9c2cf2d6c",
                     "path": "<Keyboard>/e",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
-                    "groups": "",
+                    "groups": "New control scheme",
                     "action": "Transform",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -111,5 +114,22 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "New control scheme",
+            "bindingGroup": "New control scheme",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
