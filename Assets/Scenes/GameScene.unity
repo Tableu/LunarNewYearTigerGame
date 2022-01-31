@@ -15496,6 +15496,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8912522750176719539, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
   m_PrefabInstance: {fileID: 8912522750686722395}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &605770638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 955164325526175214, guid: 71006fc3ff681cb4990bd55576d03e26, type: 3}
+  m_PrefabInstance: {fileID: 1630645974627880783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &605770643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605770638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a070529fa48aa45951bb27f9a800b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Enemy/EnemyWing
+--- !u!114 &605770644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605770638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc04998b0207564c8f82d661c30f52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Enemy/EnemyPoof
 --- !u!1 &808085064
 GameObject:
   m_ObjectHideFlags: 0
@@ -26485,6 +26516,7 @@ GameObject:
   - component: {fileID: 1956385484}
   - component: {fileID: 1956385483}
   - component: {fileID: 1956385485}
+  - component: {fileID: 1956385486}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -26569,6 +26601,38 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 22e9485306e466b498ce5e505d6091bd, type: 3}
   - {fileID: 21300000, guid: bd20abdab0398424a9a465ad405f8a93, type: 3}
   Player: {fileID: 2044980031}
+--- !u!114 &1956385486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956385481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1142431546
+      Data2: 1322205752
+      Data3: -1875836026
+      Data4: 1792038426
+    Path: event:/Music/Music Parameter
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Music
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1972614630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26729,6 +26793,51 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8912522750176719550, guid: a4aee4ebbe44a3d4597bf9ca18682520, type: 3}
   m_PrefabInstance: {fileID: 8912522750686722395}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2044980039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044980031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2974ad2cd147784bafc7dfddfece66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/General/Transform
+--- !u!114 &2044980040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044980031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1142431546
+      Data2: 1322205752
+      Data3: -1875836026
+      Data4: 1792038426
+    Path: event:/Music/Music Parameter
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Music
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1630645974627880783
 PrefabInstance:
   m_ObjectHideFlags: 0
