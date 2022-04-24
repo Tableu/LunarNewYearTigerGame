@@ -9,6 +9,7 @@ public class IntroCutscene : MonoBehaviour
     public Image background;
     public List<Sprite> Images;
     public GameObject Player;
+    public EnemyManager EnemyManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,14 @@ public class IntroCutscene : MonoBehaviour
                                         {
                                             Player.SetActive(true);
                                             background.gameObject.SetActive(false);
+                                            gameObject.SetActive(false);
+                                            foreach (GameObject enemy in EnemyManager.Enemies)
+                                            {
+                                                if (enemy != null)
+                                                {
+                                                    enemy.SetActive(true);
+                                                }
+                                            }
                                         }));
                                     }));
                                 }));
